@@ -1,5 +1,5 @@
 // create function computerPlay that randomly selects R, P, or S
-    // randomly select number 0-2 inclusive, corresponds to R, P, S
+    // randomly select number 0-2 inclusive, which corresponds to R, P, or S
     // return output to computerSelection
     
 function computerPlay() {
@@ -8,10 +8,9 @@ function computerPlay() {
     return options[rand];
 }
 
-// collect user input in playerSelection NOTE: case-insensitive aka use toLowerCase
 
 // create function takes 2 parameters (playerplayerSelection & computerSelection)
-    // logic to determine result for all 3 cases
+    // logic to compare 2 parameters and determine result for all 3 cases
         // tie - replay round
         // win
         // loss
@@ -50,22 +49,19 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-// const playerSelection = (prompt("Please enter rock, paper, or scissors: ").toLowerCase());
-// const computerSelection = computerPlay();
-// console.log(playRound(playerSelection, computerSelection));
 
-// create counter, if counter <=5 proceed
-// while tie == true
+// create function that iterates X number of times
+// while counter < X
     // perform playRound
-    // if decisive round, tie = false, counter++
-    // if tie, tie remains true
-
+        // win OR lose, counter++, adjust individual score
+// report final score to console
 
 function game(rounds) {
     let counter = 1;
     let playerScore = 0;
     let computerScore = 0;
     while (counter <= (Math.floor(rounds/2) + 1)) {
+        // collect user input in playerSelection NOTE: case-insensitive aka use toLowerCase
         let playerSelection = (prompt("Please enter rock, paper, or scissors: ").toLowerCase());
         let computerSelection = computerPlay();
         let result = playRound(playerSelection, computerSelection);
@@ -86,5 +82,6 @@ function game(rounds) {
     }
 }
 
+// play best out of user-entered number of rounds
 let rounds = parseInt(prompt("Please enter how many (odd) rounds would you like to play best out of: "));
 game(rounds);
