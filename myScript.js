@@ -1,11 +1,12 @@
+game();
+
 // create function computerPlay that randomly selects R, P, or S
     // randomly select number 0-2 inclusive, which corresponds to R, P, or S
     // return output to computerSelection
     
 function computerPlay() {
-    let options = ["rock", "paper", "scissors"];
-    let rand = Math.floor(Math.random() * 3);
-    return options[rand];
+    const options = ["rock", "paper", "scissors"];
+    return options[Math.floor(Math.random() * 3)];
 }
 
 
@@ -56,11 +57,11 @@ function playRound(playerSelection, computerSelection) {
         // win OR lose, counter++, adjust individual score
 // report final score to console
 
-function game(rounds) {
+function game() {
     let counter = 1;
     let playerScore = 0;
     let computerScore = 0;
-    while (counter <= (Math.floor(rounds/2) + 1)) {
+    while (counter <= 5) {
         // collect user input in playerSelection NOTE: case-insensitive aka use toLowerCase
         let playerSelection = (prompt("Please enter rock, paper, or scissors: ").toLowerCase());
         let computerSelection = computerPlay();
@@ -81,7 +82,3 @@ function game(rounds) {
         console.log(`Sorry, you lost to the computer. The final score was Player: ${playerScore} - Computer: ${computerScore}. :(`);
     }
 }
-
-// play best out of user-entered number of rounds
-let rounds = parseInt(prompt("Please enter how many (odd) rounds would you like to play best out of: "));
-game(rounds);
