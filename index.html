@@ -2,19 +2,36 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Rock, Paper, Scissors</title>
+        <title>Rock Paper Scissors</title>
         <link rel="stylesheet" href="main.css">
     </head>
 
     <body>
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
+        <main>
+            <h1>Rock Paper Scissors</h1>
+            <h3>First to 5 Wins</h3>
 
-        <div id="results"></div>
-        <div id="playerScore"></div>
-        <div id="computerScore"></div>
-        <div id="winner"></div>
+            <section class="score">
+                <section class="player">
+                    <span>Player: </span>
+                    <span class="playerScore"></span>
+                </section>
+                <section class="computer">
+                    <span>Computer: </span>
+                    <span class="computerScore"></span>
+                </section>
+            </section>
+            
+            <section>
+                <button id="rock" class="selection">Rock</button>
+                <button id="paper" class="selection">Paper</button>
+                <button id="scissors" class="selection">Scissors</button>
+            </section>
+            <div id="roundResult"></div>
+            <h2 id="finalResult"></h2>
+            <button id="playAgain" class="hidden">Play again</button>
+        </main>
+        
 
         <script src="myScript.js"></script>
     </body>
