@@ -49,14 +49,14 @@ let playAgainButton = document.querySelector('#playAgain')
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
         if (playerScore === 5 || computerScore === 5) {
-            return;
+            return
         }
-        let playerSelection = button.id;
-        let computerSelection = computerPlay();
-        playRound(playerSelection, computerSelection);
+        let playerSelection = button.id
+        let computerSelection = computerPlay()
+        playRound(playerSelection, computerSelection)
         updateScore() 
         if (playerScore === 5 || computerScore === 5) {
-            nameWinner();
+            nameWinner()
             playAgainButton.classList.toggle('hidden')
         }        
     })
@@ -73,10 +73,12 @@ function updateScore() {
 // announce winner
 function nameWinner() {
     if (playerScore > computerScore) {
-        finalResult.innerText = `Congratulations, you won ${playerScore} - ${computerScore}! :)`;
+        finalResult.innerText = `Congratulations, you won ${playerScore} - ${computerScore}! :)`
+        finalResult.style.color = 'darkgreen'
     }
     else {
-        finalResult.innerText = `Sorry, you lost ${playerScore} - ${computerScore} :(`;
+        finalResult.innerText = `Sorry, you lost ${playerScore} - ${computerScore} :(`
+        finalResult.style.color = 'red'
     }
 }
 

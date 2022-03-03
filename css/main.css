@@ -40,24 +40,25 @@ h3, button {
     margin-top: 5%;
 }
 
-.round {
+.btns {
     margin-top: 2%;
 }
-.round h2 {
-    margin-top: 2%;
-}
-.round button {
+.btns button {
     width: 80px;
     height: 30px;
     margin: 0 5px;
 }
 
-.endGame {
-    margin-top: 5%;
-    color: red;
-}
-.endGame button {
-    width: 110px;
-    height: 30px;
+.results {
     margin-top: 2%;
+}
+.results #finalResult {
+    margin-top: 12%;
+}
+.results button {
+    width: 120px;
+    height: 40px;
+    margin-top: 8%;
+    font-size: 2rem;
+    font-weight: bold;
 }
