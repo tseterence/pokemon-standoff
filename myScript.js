@@ -53,14 +53,8 @@ buttons.forEach((button) => {
         }
         let playerSelection = button.id;
         let computerSelection = computerPlay();
-        console.log(playerSelection); //
-        console.log(computerSelection); //
-
         playRound(playerSelection, computerSelection);
-        console.log(playerScore); //
-        console.log(computerScore); //
         updateScore() 
-
         if (playerScore === 5 || computerScore === 5) {
             nameWinner();
             playAgainButton.classList.toggle('hidden')
@@ -70,12 +64,13 @@ buttons.forEach((button) => {
 
 playAgainButton.addEventListener('click', newGame)
 
+// update score text
 function updateScore() {
     document.querySelector('.playerScore').innerText = `${playerScore}`
     document.querySelector('.computerScore').innerText = `${computerScore}`
 }
 
-
+// announce winner
 function nameWinner() {
     if (playerScore > computerScore) {
         finalResult.innerText = `Congratulations, you won ${playerScore} - ${computerScore}! :)`;
@@ -85,6 +80,7 @@ function nameWinner() {
     }
 }
 
+// reset game
 function newGame() {
     playerScore = 0
     computerScore = 0
