@@ -35,7 +35,7 @@ function playRound(playerSelection, computerSelection) {
             playerScore++
         }
         else {
-            roundResult.innerText = 'Scissors is smashed rock. You lose.'
+            roundResult.innerText = 'Scissors is smashed by rock. You lose.'
             computerScore++
         }
     }
