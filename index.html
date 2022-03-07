@@ -17,8 +17,8 @@
 
             <section class="computerContainer">
                 <section class="computerStats">
-                    <h2>Computer LVL<span class="computerLevel"></span></h2>
-                    <p class="health">&hearts;&hearts;&hearts;&hearts;&hearts;</p>
+                    <h2>Computer Lv<span class="computerLevel">0</span></h2>
+                    <p>Lives <span class="computerHealth health">♥♥♥♥♥</span></p>
                 </section>
                 <!-- <section class="computerWeapon">
                     <img src="https://via.placeholder.com/75" alt="image of opponent selection">
@@ -36,23 +36,28 @@
                     <img src="https://via.placeholder.com/75" alt="image of opponent selection">
                 </section> -->
                 <section class="playerStats">
-                    <h2>Player LVL<span class="playerLevel"></span></h2>
-                    <p class="health">&hearts;&hearts;&hearts;&hearts;&hearts;</p>
+                    <h2>Player Lv<span class="playerLevel">0</span></h2>
+                    <p>Lives <span class="playerHealth health">♥♥♥♥♥</span></p>
                 </section>
             </section>
             
             <section class="actionContainer">
                 <section class="dialogue">
-                    <section class="results">
-                        <h2 id="roundResult">Choose your weapon!</h2>
-                        <h2 id="finalResult"></h2>
-                    </section>
+                    <h2 id="roundResult">Which will you play?</h2>
                 </section>
                 <section class="action">
                     <h2 id="rock" class="selection">Rock</h2>
                     <h2 id="paper" class="selection">Paper</h2>
                     <h2 id="scissors" class="selection">Scissors</h2>
-                    <h2 id="playAgain" class="selection hidden">Play Again</h2>
+                </section>
+            </section>
+
+            <section class="resultContainer">
+                <section class="dialogue">
+                    <h1 id="finalResult"></h1>
+                </section>
+                <section class="action">
+                    <h1 id="playAgain" class="selection hidden">Play Again</h1>
                 </section>
             </section>
         </main>

@@ -17,6 +17,7 @@ html {
     font-family: 'Press Start 2P', cursive;
     font-size: 62.5%;
     font-weight: 400;
+    background: #f7e4fa;
 }
 
 .selection {
@@ -29,14 +30,18 @@ html {
 
 .scoreContainer {
     text-align: center;
-    height: 10vh;
+    /* height: 10vh; */
+    height: 80px;
+    margin-top: 30px;
+    border: 1px solid black;
 }
 
-.playerContainer {
-    height: 35vh;
+.computerContainer, .playerContainer {
+    /* height: 30vh; */
+    height: 200px;
 }
 
-.computerContainer, .playerContainer, .actionContainer {
+.computerContainer, .playerContainer, .actionContainer, .resultContainer {
     display: flex;
     justify-content: space-between;
 }
@@ -53,18 +58,34 @@ html {
     border: 1px solid black;
 }
 
-.actionContainer .dialogue {
+.actionContainer .dialogue, .resultContainer .dialogue {
     width: 60%;
-    border: 1px solid black;
 }
-.actionContainer .action {
+.actionContainer .action, .resultContainer .action {
     width: 40%;
-    border: 1px solid black;
 }
 
+.actionContainer .dialogue, .actionContainer .action {
+    border: 5px double black;
+}
 .actionContainer {
-    height: 20vh;
+    /* height: 20vh; */
+    height: 150px;
+}
+.resultContainer {
+    /* height: 10vh; */
+    height: 80px;
 }
 .health {
     font-size: 3rem;
+}
+
+@media (min-width: 800px) {
+    body {
+        display: flex;
+        justify-content: center;
+    }
+    main {
+        width: 800px;
+    }
 }
