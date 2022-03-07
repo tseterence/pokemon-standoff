@@ -88,6 +88,6 @@ function newGame() {
     computerScore = 0
     updateScore()
     playAgainButton.classList.toggle('hidden')
-    roundResult.innerText =''
+    roundResult.innerText ='Choose your weapon!'
     finalResult.innerText = ''
 }

@@ -10,34 +10,51 @@
 
     <body>
         <main>
-            <section>
-                <h1>Rock Paper Scissors</h1>
-                <h3>First to 5 Wins</h3>
+            <section class="scoreContainer">
+                <h1>Score</h1>
+                <h1><span class="playerScore">0</span> - <span class="computerScore">0</span></h1>
             </section>            
 
-            <section class="score">
-                <section class="player">
-                    <span>Player: </span>
-                    <span class="playerScore"></span>
+            <section class="computerContainer">
+                <section class="computerStats">
+                    <h2>Computer LVL<span class="computerLevel"></span></h2>
+                    <p class="health">&hearts;&hearts;&hearts;&hearts;&hearts;</p>
                 </section>
-                <section class="computer">
-                    <span>Computer: </span>
-                    <span class="computerScore"></span>
+                <!-- <section class="computerWeapon">
+                    <img src="https://via.placeholder.com/75" alt="image of opponent selection">
+                </section> -->
+                <section class="computerImage">
+                    <img src="https://via.placeholder.com/200" alt="image of opponent">
+                </section>
+            </section>
+
+            <section class="playerContainer">
+                <section class="playerImage">
+                    <img src="https://via.placeholder.com/200" alt="image of opponent">
+                </section>
+                <!-- <section class="playerWeapon">
+                    <img src="https://via.placeholder.com/75" alt="image of opponent selection">
+                </section> -->
+                <section class="playerStats">
+                    <h2>Player LVL<span class="playerLevel"></span></h2>
+                    <p class="health">&hearts;&hearts;&hearts;&hearts;&hearts;</p>
                 </section>
             </section>
             
-            <section class="btns">
-                <button id="rock" class="selection">Rock</button>
-                <button id="paper" class="selection">Paper</button>
-                <button id="scissors" class="selection">Scissors</button>
+            <section class="actionContainer">
+                <section class="dialogue">
+                    <section class="results">
+                        <h2 id="roundResult">Choose your weapon!</h2>
+                        <h2 id="finalResult"></h2>
+                    </section>
+                </section>
+                <section class="action">
+                    <h2 id="rock" class="selection">Rock</h2>
+                    <h2 id="paper" class="selection">Paper</h2>
+                    <h2 id="scissors" class="selection">Scissors</h2>
+                    <h2 id="playAgain" class="selection hidden">Play Again</h2>
+                </section>
             </section>
-            
-            <section class="results">
-                <h2 id="roundResult"></h2>
-                <h2 id="finalResult"></h2>
-                <button id="playAgain" class="hidden">Play Again</button>
-            </section>
-            
         </main>
 
         <script src="main.js"></script>
