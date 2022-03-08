@@ -64,9 +64,6 @@ img {
     border-bottom-right-radius: 15px;
     border-bottom: 2px solid black;
 }
-/* .health {
-    font-size: 2rem;
-} */
 
 
 /* action & results section */
@@ -98,9 +95,9 @@ img {
 
 
 /* small tweaks */
-.computerContainer, .playerContainer, .roundContainer {
+/* .computerContainer, .playerContainer, .roundContainer {
     margin-top: 8px;
-}
+} */
 #reportPlayer, #reportComputer {
     padding-bottom: 20px;
 }
@@ -147,5 +144,8 @@ img {
     }
     .gameContainer .action {
         padding-left: 6%;
+    }
+    .health {
+        font-size: 2rem;
     }
 }
