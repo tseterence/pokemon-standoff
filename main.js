@@ -132,7 +132,7 @@ function newGame() {
     playAgainButton.classList.toggle('hidden')
     reportPlayer.innerText = ''
     reportComputer.innerText = ''
-    reportRound.innerText ='What will Pikachu use?'
+    reportRound.innerText ='Help Pikachu defeat Meowth! What will Pikachu use?'
     finalResult.innerText = ''
     gameContainer.style.border = 'none'
 }

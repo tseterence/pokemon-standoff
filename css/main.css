@@ -27,16 +27,12 @@ html {
 /* total score section */
 .scoreContainer {
     text-align: center;
-    height: 80px;
     margin-top: 15px;
     border-bottom: 1px solid black;
 }
 
 
 /* player & computer sections */
-.computerContainer, .playerContainer {
-    height: 180px;
-}
 .computerStats, .playerStats {
     width: 45%;
 }
@@ -67,12 +63,6 @@ img {
 
 
 /* action & results section */
-.roundContainer {
-    height: 140px;
-}
-.gameContainer {
-    height: 115px;
-}
 .dialogue {
     width: 58%;
 }
@@ -95,11 +85,39 @@ img {
 
 
 #reportPlayer, #reportComputer {
-    padding-bottom: 12px;
+    padding-bottom: 5px;
 }
 .selection:hover {
     cursor: pointer;
     color: #21368b;
+}
+
+@media (max-width: 400px) {
+    img {
+        height: 150px;
+        width: 150px;
+    }
+    .computerStats *, .playerStats * {
+        font-size: 1.0rem;
+    }
+    .dialogue {
+        width: 55%;
+    }
+    .action {
+        width: 45%;
+    }
+    .roundContainer h2 {
+        font-size: 1.2rem;
+    }
+    .roundContainer h3 {
+        font-size: 1.0rem;
+    }
+    .roundContainer .selection {
+        margin-top: 14px;
+    }
+    .gameContainer h1 {
+        font-size: 1.6rem;
+    }
 }
 
 @media (min-width: 800px) {
