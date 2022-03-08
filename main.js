@@ -6,53 +6,13 @@ let computerLevel = 0
 
 let winLose = ''
 
-// computerPlay function    
-function computerPlay() {
-    const options = ['rock', 'paper', 'scissors']
-    return options[Math.floor(Math.random() * 3)]
-}
-
-// playRound function
-function playRound(playerSelection, computerSelection) {
-    if (playerSelection === computerSelection) {
-        winLose = 'tie'
-    } else if (playerSelection === 'rock') {
-        if (computerSelection == 'scissors') {
-            winLose = 'win'
-            playerScore++
-        }
-        else {
-            winLose = 'lose'
-            computerScore++
-        }            
-    } else if (playerSelection === 'paper') {
-        if (computerSelection === 'rock') {
-            winLose = 'win'
-            playerScore++
-        }
-        else {
-            winLose = 'lose'
-            computerScore++
-        }
-    } else if (playerSelection === 'scissors') {
-        if (computerSelection === 'paper') {
-            winLose = 'win'
-            playerScore++
-        }
-        else {
-            winLose = 'lose'
-            computerScore++
-        }
-    }
-}
 
 let buttons = document.querySelectorAll('.selection')
-let roundResult = document.querySelector('#roundResult')
-let finalResult = document.querySelector('#finalResult')
-let resultContainer = document.querySelector('.resultContainer')
-
+let playerHealth = document.querySelector('.playerHealth')
+let computerHealth = document.querySelector('.computerHealth')
 let playAgainButton = document.querySelector('#playAgain')
 
+// starts up initial game
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
         if (playerScore === 5 || computerScore === 5) {
@@ -61,7 +21,6 @@ buttons.forEach((button) => {
         let playerSelection = button.id
         let computerSelection = computerPlay()
         playRound(playerSelection, computerSelection)
-        roundResult.innerText = `You threw ${playerSelection}!\n Computer threw ${computerSelection}!\n\n You ${winLose} this round!`
         playerHealth.innerText = updateLives(computerScore)
         computerHealth.innerText = updateLives(playerScore)
         updateScore() 
@@ -72,10 +31,57 @@ buttons.forEach((button) => {
     })
 })
 
+// restarts a new game
 playAgainButton.addEventListener('click', newGame)
 
-let playerHealth = document.querySelector('.playerHealth')
-let computerHealth = document.querySelector('.computerHealth')
+// computerPlay function    
+function computerPlay() {
+    const options = ['rock', 'paper', 'scissors']
+    return options[Math.floor(Math.random() * 3)]
+}
+
+
+let reportPlayer = document.querySelector('#reportPlayer')
+let reportComputer = document.querySelector('#reportComputer')
+let reportRound = document.querySelector('#reportRound')
+
+// playRound function
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection === computerSelection) {
+        winLose = 'ties'
+    } else if (playerSelection === 'rock') {
+        if (computerSelection == 'scissors') {
+            winLose = 'wins'
+            playerScore++
+        }
+        else {
+            winLose = 'loses'
+            computerScore++
+        }            
+    } else if (playerSelection === 'paper') {
+        if (computerSelection === 'rock') {
+            winLose = 'wins'
+            playerScore++
+        }
+        else {
+            winLose = 'loses'
+            computerScore++
+        }
+    } else if (playerSelection === 'scissors') {
+        if (computerSelection === 'paper') {
+            winLose = 'wins'
+            playerScore++
+        }
+        else {
+            winLose = 'loses'
+            computerScore++
+        }
+    }
+    reportPlayer.innerText = `Pikachu threw ${playerSelection}!`
+    reportComputer.innerText = `Meowth threw ${computerSelection}!`
+    reportRound.innerText = `Pikachu ${winLose} this round!`
+}
+
 // show life count
 function updateLives(opponentScore) {
     let heartText = ''
@@ -84,9 +90,6 @@ function updateLives(opponentScore) {
     }
     return heartText
 }
-// level up for each won game
-let playerLv= document.querySelector('.playerLevel')
-let computerLv = document.querySelector('.computerLevel')
 
 // update score text
 function updateScore() {
@@ -94,32 +97,42 @@ function updateScore() {
     document.querySelector('.computerScore').innerText = `${computerScore}`
 }
 
+
+let gameContainer = document.querySelector('.gameContainer')
+let finalResult = document.querySelector('#finalResult')
+
 // announce winner
 function nameWinner() {
-    resultContainer.style.border = '5px double black'
+    gameContainer.style.border = '5px double black'
     if (playerScore > computerScore) {
-        finalResult.innerText = ` Nice! You won ${playerScore} - ${computerScore}`
+        finalResult.innerText = `Nice! Pikachu won ${playerScore} - ${computerScore}`
         finalResult.style.color = 'darkgreen'
         playerLevel++
     }
     else {
-        finalResult.innerText = ` Sorry, you lost ${playerScore} - ${computerScore}`
+        finalResult.innerText = `Sorry, Pikachu lost ${playerScore} - ${computerScore}`
         finalResult.style.color = 'red'
         computerLevel++
     }
 }
 
+
+let playerLv= document.querySelector('.playerLevel')
+let computerLv = document.querySelector('.computerLevel')
+
 // reset game
 function newGame() {
     playerScore = 0
     computerScore = 0
+    updateScore()
     playerHealth.innerText = updateLives(computerScore)
     computerHealth.innerText = updateLives(playerScore)
     playerLv.innerText = playerLevel
     computerLv.innerText = computerLevel
-    updateScore()
     playAgainButton.classList.toggle('hidden')
-    roundResult.innerText ='Which will you play?'
+    reportPlayer.innerText = ''
+    reportComputer.innerText = ''
+    reportRound.innerText ='What will Pikachu use?'
     finalResult.innerText = ''
-    resultContainer.style.border = 'none'
+    gameContainer.style.border = 'none'
 }

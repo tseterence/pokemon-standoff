@@ -11,73 +11,102 @@
     display: none;
 }
 
-/* Note: 62.5% of default web browser font 16px = 10px = 1rem */
 html {
-    /* font-family: Arial, Helvetica, sans-serif; */
     font-family: 'Press Start 2P', cursive;
     font-size: 62.5%;
     font-weight: 400;
     background: #f7e4fa;
 }
 
-.selection {
-    padding-left: 20px;
-}
-.selection:hover {
-    cursor: pointer;
-    color: red;
-}
-
-.scoreContainer {
-    text-align: center;
-    /* height: 10vh; */
-    height: 80px;
-    margin-top: 30px;
-    border: 1px solid black;
-}
-
-.computerContainer, .playerContainer {
-    /* height: 30vh; */
-    height: 200px;
-}
-
-.computerContainer, .playerContainer, .actionContainer, .resultContainer {
+.computerContainer, .playerContainer, .roundContainer, .gameContainer {
     display: flex;
     justify-content: space-between;
 }
-.computerContainer .computerStats, .playerContainer .playerStats {
-    width: 45%;
-    border: 1px solid black;
-}
-/* .computerContainer .computerWeapon, .playerContainer .playerWeapon {
-    width: 20%;
-    border: 1px solid black;
-} */
-.computerContainer .computerImage, .playerContainer .playerImage {
-    width: 55%;
-    border: 1px solid black;
-}
 
-.actionContainer .dialogue, .resultContainer .dialogue {
-    width: 60%;
-}
-.actionContainer .action, .resultContainer .action {
-    width: 40%;
-}
 
-.actionContainer .dialogue, .actionContainer .action {
-    border: 5px double black;
-}
-.actionContainer {
-    /* height: 20vh; */
-    height: 150px;
-}
-.resultContainer {
-    /* height: 10vh; */
+/* total score section */
+.scoreContainer {
+    text-align: center;
     height: 80px;
+    margin-top: 40px;
+    border-bottom: 1px solid black;
+}
+
+
+/* player & computer sections */
+.computerContainer, .playerContainer {
+    height: 200px;
+}
+.computerStats, .playerStats {
+    width: 45%;
+}
+.computerImage, .playerImage {
+    width: 55%;
+    text-align: center;
+}
+img {
+    height: 175px;
+    width: 175px;
+}
+.computerStats {
+    height: 40px;
+    margin: 50px 0 0 10px;
+    padding-left: 4%;
+    border-left: 2px solid black;
+    border-bottom-left-radius: 15px;
+    border-bottom: 2px solid black;
+}
+.playerStats {
+    height: 40px;
+    margin: 50px 10px 0 0;
+    padding-left: 6%;
+    border-right: 2px solid black;
+    border-bottom-right-radius: 15px;
+    border-bottom: 2px solid black;
 }
 .health {
-    font-size: 3rem;
+    font-size: 2rem;
+}
+
+
+/* action & results section */
+.roundContainer {
+    height: 155px;
+}
+.gameContainer {
+    height: 115px;
+}
+.dialogue {
+    width: 60%;
+}
+.action {
+    width: 40%;
+}
+.roundContainer .dialogue, .roundContainer .action {
+    border: 5px double black;
+    padding: 10px;
+}
+.roundContainer .selection {
+    margin-top: 18px;
+}
+.gameContainer {
+    padding: 10px;
+}
+.gameContainer .action {
+    padding-left: 8%;
+}
+
+
+/* small tweaks */
+.computerContainer, .playerContainer, .roundContainer {
+    margin-top: 18px;
+}
+#reportPlayer, #reportComputer {
+    padding-bottom: 20px;
+}
+.selection:hover {
+    cursor: pointer;
+    color: #21368b;
 }
 
 @media (min-width: 800px) {
@@ -87,5 +116,36 @@ html {
     }
     main {
         width: 800px;
+    }
+    .scoreContainer {
+        border: 1px solid black;
+    }
+    .computerContainer, .playerContainer {
+        border-right: 1px solid black; 
+        border-left: 1px solid black; 
+    }
+    .computerStats {
+        padding-left: 2%;
+    }
+    .playerStats {
+        padding-left: 26%;
+    }
+    #reportComputer {
+        padding-bottom: 50px;
+    }
+    .gameContainer {
+        height: 68px;
+    }
+    .computerContainer, .playerContainer, .roundContainer, .gameContainer {
+        margin-top: 0;
+    }
+    .gameContainer .dialogue {
+        width: 65%;
+    }
+    .gameContainer .action {
+        width: 35%;
+    }
+    .gameContainer .action {
+        padding-left: 6%;
     }
 }
