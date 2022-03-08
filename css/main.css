@@ -28,7 +28,7 @@ html {
 .scoreContainer {
     text-align: center;
     height: 80px;
-    margin-top: 40px;
+    margin-top: 30px;
     border-bottom: 1px solid black;
 }
 
@@ -64,9 +64,9 @@ img {
     border-bottom-right-radius: 15px;
     border-bottom: 2px solid black;
 }
-.health {
+/* .health {
     font-size: 2rem;
-}
+} */
 
 
 /* action & results section */
@@ -99,7 +99,7 @@ img {
 
 /* small tweaks */
 .computerContainer, .playerContainer, .roundContainer {
-    margin-top: 18px;
+    margin-top: 8px;
 }
 #reportPlayer, #reportComputer {
     padding-bottom: 20px;
