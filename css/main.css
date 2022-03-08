@@ -64,17 +64,23 @@ img {
 
 /* action & results section */
 .dialogue {
-    width: 58%;
+    width: 60%;
 }
 .action {
-    width: 42%;
+    width: 40%;
 }
 .roundContainer .dialogue, .roundContainer .action {
     border: 5px double black;
     padding: 10px;
 }
+.roundContainer h3 {
+    margin-bottom: 10px;
+}
+.roundContainer h2 {
+    margin-top: 20px;
+}
 .roundContainer .selection {
-    margin-top: 16px;
+    margin-top: 12px;
 }
 .gameContainer {
     padding: 10px;
@@ -142,7 +148,7 @@ img {
         padding-left: 22%;
     }
     #reportComputer {
-        padding-bottom: 50px;
+        padding-bottom: 8px;
     }
     .gameContainer {
         height: 68px;

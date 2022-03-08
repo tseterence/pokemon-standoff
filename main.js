@@ -48,38 +48,38 @@ let reportRound = document.querySelector('#reportRound')
 // playRound function
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        winLose = 'ties'
+        winLose = 'tied'
     } else if (playerSelection === 'rock') {
         if (computerSelection == 'scissors') {
-            winLose = 'wins'
+            winLose = 'won'
             playerScore++
         }
         else {
-            winLose = 'loses'
+            winLose = 'lost'
             computerScore++
         }            
     } else if (playerSelection === 'paper') {
         if (computerSelection === 'rock') {
-            winLose = 'wins'
+            winLose = 'won'
             playerScore++
         }
         else {
-            winLose = 'loses'
+            winLose = 'lost'
             computerScore++
         }
     } else if (playerSelection === 'scissors') {
         if (computerSelection === 'paper') {
-            winLose = 'wins'
+            winLose = 'won'
             playerScore++
         }
         else {
-            winLose = 'loses'
+            winLose = 'lost'
             computerScore++
         }
     }
-    reportPlayer.innerText = `Pikachu threw ${playerSelection}!`
-    reportComputer.innerText = `Meowth threw ${computerSelection}!`
-    reportRound.innerText = `Pikachu ${winLose} this round!`
+    reportPlayer.innerText = `Pikachu: ${playerSelection}!`
+    reportComputer.innerText = `Meowth: ${computerSelection}!`
+    reportRound.innerText = `Round ${winLose}!`
 }
 
 // show life count
@@ -132,7 +132,7 @@ function newGame() {
     playAgainButton.classList.toggle('hidden')
     reportPlayer.innerText = ''
     reportComputer.innerText = ''
-    reportRound.innerText ='Help Pikachu defeat Meowth! What will Pikachu use?'
+    reportRound.innerText ='Help Pikachu defeat Meowth!'
     finalResult.innerText = ''
     gameContainer.style.border = 'none'
 }
