@@ -28,7 +28,7 @@ html {
 .scoreContainer {
     text-align: center;
     height: 80px;
-    margin-top: 20px;
+    margin-top: 15px;
     border-bottom: 1px solid black;
 }
 
@@ -59,7 +59,7 @@ img {
 .playerStats {
     height: 40px;
     margin: 50px 10px 0 0;
-    padding-left: 3%;
+    padding-left: 2%;
     border-right: 2px solid black;
     border-bottom-right-radius: 15px;
     border-bottom: 2px solid black;
@@ -74,10 +74,10 @@ img {
     height: 115px;
 }
 .dialogue {
-    width: 60%;
+    width: 58%;
 }
 .action {
-    width: 40%;
+    width: 42%;
 }
 .roundContainer .dialogue, .roundContainer .action {
     border: 5px double black;
