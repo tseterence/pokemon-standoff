@@ -35,7 +35,7 @@ html {
 
 /* player & computer sections */
 .computerContainer, .playerContainer {
-    height: 200px;
+    height: 180px;
 }
 .computerStats, .playerStats {
     width: 45%;
@@ -59,7 +59,7 @@ img {
 .playerStats {
     height: 40px;
     margin: 50px 10px 0 0;
-    padding-left: 4%;
+    padding-left: 3%;
     border-right: 2px solid black;
     border-bottom-right-radius: 15px;
     border-bottom: 2px solid black;
@@ -84,7 +84,7 @@ img {
     padding: 10px;
 }
 .roundContainer .selection {
-    margin-top: 18px;
+    margin-top: 16px;
 }
 .gameContainer {
     padding: 10px;
@@ -94,10 +94,6 @@ img {
 }
 
 
-/* small tweaks */
-/* .computerContainer, .playerContainer, .roundContainer {
-    margin-top: 8px;
-} */
 #reportPlayer, #reportComputer {
     padding-bottom: 12px;
 }
