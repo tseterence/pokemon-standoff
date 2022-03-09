@@ -98,6 +98,41 @@ img {
     color: #21368b;
 }
 
+/* shake image animation */
+.shakeImage {
+    animation: shake 0.5s;
+    animation-iteration-count: 2;
+}  
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+/* blink image animation */
+.blinkImage {
+    animation: blink 0.5s;
+    animation-iteration-count: 2;
+}
+@keyframes blink {
+    0% { opacity: 1; }
+    25% { opacity: 0; }
+    50% { opacity: 1; }
+    75% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+/* media queries */
 @media (max-width: 400px) {
     img {
         height: 150px;
@@ -135,6 +170,7 @@ img {
         width: 800px;
     }
     .scoreContainer {
+        margin-top: 30px;
         border: 1px solid black;
     }
     .computerContainer, .playerContainer {
