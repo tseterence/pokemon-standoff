@@ -15,6 +15,12 @@ let playAgainButton = document.querySelector('#playAgain')
 // starts up initial game
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
+        // remove img animation classes
+        document.querySelector('#pikachuPic').classList.remove('blinkImage')
+        document.querySelector('#pikachuPic').classList.remove('shakeImage')
+        document.querySelector('#meowthPic').classList.remove('blinkImage')
+        document.querySelector('#meowthPic').classList.remove('shakeImage')
+        
         if (playerScore === 5 || computerScore === 5) {
             return
         }
@@ -80,6 +86,15 @@ function playRound(playerSelection, computerSelection) {
     reportPlayer.innerText = `Pikachu: ${playerSelection}!`
     reportComputer.innerText = `Meowth: ${computerSelection}!`
     reportRound.innerText = `Round ${winLose}!`
+
+    if (winLose === 'won') {
+        document.querySelector('#meowthPic').classList.add('blinkImage')
+    } else if (winLose === 'lost') {
+        document.querySelector('#pikachuPic').classList.add('blinkImage')
+    } else if (winLose === 'tied') {
+        document.querySelector('#pikachuPic').classList.add('shakeImage')
+        document.querySelector('#meowthPic').classList.add('shakeImage')
+    }
 }
 
 // show life count
@@ -135,4 +150,10 @@ function newGame() {
     reportRound.innerText ='Help Pikachu defeat Meowth!'
     finalResult.innerText = ''
     gameContainer.style.border = 'none'
+
+    // remove img animation classes
+    document.querySelector('#pikachuPic').classList.remove('blinkImage')
+    document.querySelector('#pikachuPic').classList.remove('shakeImage')
+    document.querySelector('#meowthPic').classList.remove('blinkImage')
+    document.querySelector('#meowthPic').classList.remove('shakeImage')
 }
