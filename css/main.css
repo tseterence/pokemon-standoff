@@ -86,14 +86,14 @@ img {
 .gameContainer {
     padding: 10px;
 }
-.gameContainer .action {
-    padding-left: 8%;
-}
 .gameContainer .dialogue {
-    width: 60%;
+    width: 56%;
 }
 .gameContainer .action {
-    width: 40%;
+    width: 44%;
+}
+.gameContainer .action {
+    padding-left: 12%;
 }
 
 
