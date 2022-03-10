@@ -89,6 +89,12 @@ img {
 .gameContainer .action {
     padding-left: 8%;
 }
+.gameContainer .dialogue {
+    width: 60%;
+}
+.gameContainer .action {
+    width: 40%;
+}
 
 
 #reportPlayer, #reportComputer {
@@ -142,12 +148,6 @@ img {
     .computerStats *, .playerStats * {
         font-size: 0.9rem;
     }
-    /* .dialogue {
-        width: 60%;
-    }
-    .action {
-        width: 40%;
-    } */
     .roundContainer h2 {
         font-size: 1.0rem;
     }
