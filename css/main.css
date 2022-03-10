@@ -142,16 +142,16 @@ img {
         font-size: 0.9rem;
     }
     .dialogue {
-        width: 55%;
+        width: 58%;
     }
     .action {
-        width: 45%;
+        width: 42%;
     }
     .roundContainer h2 {
-        font-size: 1.2rem;
+        font-size: 1.0rem;
     }
     .roundContainer h3 {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
     .roundContainer .selection {
         margin-top: 14px;
