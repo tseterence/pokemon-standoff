@@ -73,11 +73,10 @@ img {
     border: 5px double black;
     padding: 10px;
 }
-.roundContainer .dialogue, .roundContainer .action {
+.roundContainer .dialogue, .roundContainer .action, .gameContainer .action {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-
 }
 .roundContainer h3 {
     font-size: 1.0rem;
@@ -179,9 +178,6 @@ img {
     }
     .playerStats {
         padding-left: 22%;
-    }
-    .gameContainer {
-        height: 68px;
     }
     .computerContainer, .playerContainer, .roundContainer, .gameContainer {
         margin-top: 0;
