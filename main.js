@@ -25,6 +25,8 @@ buttons.forEach((button) => {
         playRound(playerSelection, computerSelection)
         playerHealth.innerText = updateLives(computerScore)
         computerHealth.innerText = updateLives(playerScore)
+        reportPlayer.classList.remove('hidden')
+        reportComputer.classList.remove('hidden')
         updateScore()
         // remove img animation classes
         playerPic.addEventListener('animationend', (e) => {
@@ -150,15 +152,9 @@ function newGame() {
     playerLv.innerText = playerLevel
     computerLv.innerText = computerLevel
     playAgainButton.classList.toggle('hidden')
-    reportPlayer.innerText = ''
-    reportComputer.innerText = ''
-    reportRound.innerText ='Help Pikachu defeat Meowth!'
+    reportPlayer.classList.add('hidden')
+    reportComputer.classList.add('hidden')
+    reportRound.innerText ='Help Pikachu defeat Meowth! What will Pikachu use?'
     finalResult.innerText = ''
     gameContainer.style.border = 'none'
-
-    // remove img animation classes
-    document.querySelector('#pikachuPic').classList.remove('blinkImage')
-    document.querySelector('#pikachuPic').classList.remove('shakeImage')
-    document.querySelector('#meowthPic').classList.remove('blinkImage')
-    document.querySelector('#meowthPic').classList.remove('shakeImage')
 }

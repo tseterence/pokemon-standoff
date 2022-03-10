@@ -73,15 +73,17 @@ img {
     border: 5px double black;
     padding: 10px;
 }
+.roundContainer .dialogue, .roundContainer .action {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
 .roundContainer h3 {
-    margin-bottom: 10px;
     font-size: 1.0rem;
 }
-.roundContainer h2 {
-    margin-top: 20px;
-}
 .roundContainer .selection {
-    margin-top: 12px;
+    padding: 8px 0;
 }
 .gameContainer {
     padding: 10px;
@@ -97,9 +99,6 @@ img {
 }
 
 
-#reportPlayer, #reportComputer {
-    padding-bottom: 5px;
-}
 .selection:hover {
     cursor: pointer;
     color: #21368b;
@@ -154,9 +153,6 @@ img {
     .roundContainer h3 {
         font-size: 0.8rem;
     }
-    .roundContainer .selection {
-        margin-top: 14px;
-    }
     .gameContainer h1 {
         font-size: 1.5rem;
     }
@@ -183,9 +179,6 @@ img {
     }
     .playerStats {
         padding-left: 22%;
-    }
-    #reportComputer {
-        padding-bottom: 8px;
     }
     .gameContainer {
         height: 68px;
