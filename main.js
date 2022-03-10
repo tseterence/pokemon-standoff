@@ -9,18 +9,14 @@ let winLose = ''
 
 let buttons = document.querySelectorAll('.selection')
 let playerHealth = document.querySelector('.playerHealth')
+let playerPic = document.querySelector('#pikachuPic')
+let computerPic = document.querySelector('#meowthPic')
 let computerHealth = document.querySelector('.computerHealth')
 let playAgainButton = document.querySelector('#playAgain')
 
 // starts up initial game
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
-        // remove img animation classes
-        document.querySelector('#pikachuPic').classList.remove('blinkImage')
-        document.querySelector('#pikachuPic').classList.remove('shakeImage')
-        document.querySelector('#meowthPic').classList.remove('blinkImage')
-        document.querySelector('#meowthPic').classList.remove('shakeImage')
-        
         if (playerScore === 5 || computerScore === 5) {
             return
         }
@@ -29,7 +25,16 @@ buttons.forEach((button) => {
         playRound(playerSelection, computerSelection)
         playerHealth.innerText = updateLives(computerScore)
         computerHealth.innerText = updateLives(playerScore)
-        updateScore() 
+        updateScore()
+        // remove img animation classes
+        playerPic.addEventListener('animationend', (e) => {
+            playerPic.classList.remove('blinkImage');
+            playerPic.classList.remove('shakeImage');
+        });
+        computerPic.addEventListener('animationend', (e) => {
+            computerPic.classList.remove('blinkImage');
+            computerPic.classList.remove('shakeImage');
+        });
         if (playerScore === 5 || computerScore === 5) {
             nameWinner()
             playAgainButton.classList.toggle('hidden')
