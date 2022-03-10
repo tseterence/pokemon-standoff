@@ -64,10 +64,10 @@ img {
 
 /* action & results section */
 .dialogue {
-    width: 65%;
+    width: 62%;
 }
 .action {
-    width: 35%;
+    width: 38%;
 }
 .roundContainer .dialogue, .roundContainer .action {
     border: 5px double black;
@@ -151,7 +151,7 @@ img {
         font-size: 1.2rem;
     }
     .roundContainer h3 {
-        font-size: 1.0rem;
+        font-size: 0.9rem;
     }
     .roundContainer .selection {
         margin-top: 14px;
