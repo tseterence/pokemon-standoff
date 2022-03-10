@@ -64,10 +64,10 @@ img {
 
 /* action & results section */
 .dialogue {
-    width: 62%;
+    width: 60%;
 }
 .action {
-    width: 38%;
+    width: 40%;
 }
 .roundContainer .dialogue, .roundContainer .action {
     border: 5px double black;
@@ -141,12 +141,12 @@ img {
     .computerStats *, .playerStats * {
         font-size: 0.9rem;
     }
-    /* .dialogue {
+    .dialogue {
         width: 55%;
     }
     .action {
         width: 45%;
-    } */
+    }
     .roundContainer h2 {
         font-size: 1.2rem;
     }
