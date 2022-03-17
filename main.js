@@ -29,11 +29,11 @@ buttons.forEach((button) => {
         reportComputer.classList.remove('hidden')
         updateScore()
         // remove img animation classes
-        playerPic.addEventListener('animationend', (e) => {
+        playerPic.addEventListener('animationend', () => {
             playerPic.classList.remove('blinkImage');
             playerPic.classList.remove('shakeImage');
         });
-        computerPic.addEventListener('animationend', (e) => {
+        computerPic.addEventListener('animationend', () => {
             computerPic.classList.remove('blinkImage');
             computerPic.classList.remove('shakeImage');
         });
