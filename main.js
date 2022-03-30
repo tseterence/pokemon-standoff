@@ -87,36 +87,6 @@ function playRound(playerSelection, computerSelection) {
         computerScore++
     }
         
-//     if (playerSelection === computerSelection) {
-//         winLose = 'tied'
-//     } else if (playerSelection === 'rock') {
-//         if (computerSelection == 'scissors') {
-//             winLose = 'won'
-//             playerScore++
-//         }
-//         else {
-//             winLose = 'lost'
-//             computerScore++
-//         }            
-//     } else if (playerSelection === 'paper') {
-//         if (computerSelection === 'rock') {
-//             winLose = 'won'
-//             playerScore++
-//         }
-//         else {
-//             winLose = 'lost'
-//             computerScore++
-//         }
-//     } else if (playerSelection === 'scissors') {
-//         if (computerSelection === 'paper') {
-//             winLose = 'won'
-//             playerScore++
-//         }
-//         else {
-//             winLose = 'lost'
-//             computerScore++
-//         }
-//     }
     reportPlayer.innerText = `Pikachu: ${playerSelection}!`
     reportComputer.innerText = `Meowth: ${computerSelection}!`
     reportRound.innerText = `Round ${winLose}!`
