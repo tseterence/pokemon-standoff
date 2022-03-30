@@ -4,6 +4,8 @@ let playerLevel = 0
 let computerScore = 0
 let computerLevel = 0
 
+// Adrian Feedback: I think you can define this in playRound since it is only used within that function. Generally you only want to define variables in
+//                  the scope they are used in.
 let winLose = ''
 
 
@@ -17,6 +19,8 @@ let playAgainButton = document.querySelector('#playAgain')
 // starts up initial game
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
+        
+        // Adrian Feedback: You could move this condition to a helper function isGameOver() that can be used here and on line 42
         if (playerScore === 5 || computerScore === 5) {
             return
         }
@@ -49,6 +53,9 @@ playAgainButton.addEventListener('click', newGame)
 
 // computerPlay function    
 function computerPlay() {
+    // Adrian feedback: If you put these values into an enum type, you can reuse the enum whereever you reference the options.
+    //                  This is nice because then you can change the values of the enum without having to replace all of the
+    //                  places it was referenced. (e.g. Options.ROCK, Options.PAPER, Options.SCISSORS)
     const options = ['rock', 'paper', 'scissors']
     return options[Math.floor(Math.random() * 3)]
 }
@@ -60,36 +67,56 @@ let reportRound = document.querySelector('#reportRound')
 
 // playRound function
 function playRound(playerSelection, computerSelection) {
+    // Adrian feedback: There is a bit of duplicated code here. I think you could potentially simplify it by doing something like below. Generally you want
+    //                  to avoid having too much duplication in your code because it can often lead to bugs or a lot of work if things need to be updated.
+    function isRoundWon(playerSelection, computerSelection) {
+        return (
+            (playerSelection === 'rock' && computerSelection === 'scissors') ||
+            (playerSelection === 'paper' && computerSelection === 'rock') ||
+            (playerSelection === 'scissors' && computerSelection === 'paper')
+        )
+    }
+    
     if (playerSelection === computerSelection) {
         winLose = 'tied'
-    } else if (playerSelection === 'rock') {
-        if (computerSelection == 'scissors') {
-            winLose = 'won'
-            playerScore++
-        }
-        else {
-            winLose = 'lost'
-            computerScore++
-        }            
-    } else if (playerSelection === 'paper') {
-        if (computerSelection === 'rock') {
-            winLose = 'won'
-            playerScore++
-        }
-        else {
-            winLose = 'lost'
-            computerScore++
-        }
-    } else if (playerSelection === 'scissors') {
-        if (computerSelection === 'paper') {
-            winLose = 'won'
-            playerScore++
-        }
-        else {
-            winLose = 'lost'
-            computerScore++
-        }
+    } else if (isRoundWon(playerSelection, computerSelection) {
+        winLose = 'won'
+        playerScore++
+    } else {
+        winLose = 'lost'
+        computerScore++
     }
+        
+//     if (playerSelection === computerSelection) {
+//         winLose = 'tied'
+//     } else if (playerSelection === 'rock') {
+//         if (computerSelection == 'scissors') {
+//             winLose = 'won'
+//             playerScore++
+//         }
+//         else {
+//             winLose = 'lost'
+//             computerScore++
+//         }            
+//     } else if (playerSelection === 'paper') {
+//         if (computerSelection === 'rock') {
+//             winLose = 'won'
+//             playerScore++
+//         }
+//         else {
+//             winLose = 'lost'
+//             computerScore++
+//         }
+//     } else if (playerSelection === 'scissors') {
+//         if (computerSelection === 'paper') {
+//             winLose = 'won'
+//             playerScore++
+//         }
+//         else {
+//             winLose = 'lost'
+//             computerScore++
+//         }
+//     }
     reportPlayer.innerText = `Pikachu: ${playerSelection}!`
     reportComputer.innerText = `Meowth: ${computerSelection}!`
     reportRound.innerText = `Round ${winLose}!`
