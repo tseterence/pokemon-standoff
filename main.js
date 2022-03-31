@@ -17,7 +17,7 @@ let playAgainButton = document.querySelector('#playAgain')
 // starts up initial game
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
-        if (playerScore === 5 || computerScore === 5) {
+        if (isGameOver(playerScore, computerScore)) {
             return
         }
         let playerSelection = button.id
@@ -37,7 +37,7 @@ buttons.forEach((button) => {
             computerPic.classList.remove('blinkImage');
             computerPic.classList.remove('shakeImage');
         });
-        if (playerScore === 5 || computerScore === 5) {
+        if (isGameOver(playerScore, computerScore)) {
             nameWinner()
             playAgainButton.classList.toggle('hidden')
         }        
@@ -62,33 +62,14 @@ let reportRound = document.querySelector('#reportRound')
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         winLose = 'tied'
-    } else if (playerSelection === 'rock') {
-        if (computerSelection == 'scissors') {
-            winLose = 'won'
-            playerScore++
-        }
-        else {
-            winLose = 'lost'
-            computerScore++
-        }            
-    } else if (playerSelection === 'paper') {
-        if (computerSelection === 'rock') {
-            winLose = 'won'
-            playerScore++
-        }
-        else {
-            winLose = 'lost'
-            computerScore++
-        }
-    } else if (playerSelection === 'scissors') {
-        if (computerSelection === 'paper') {
-            winLose = 'won'
-            playerScore++
-        }
-        else {
-            winLose = 'lost'
-            computerScore++
-        }
+    } else if ((playerSelection === 'rock' && computerSelection == 'scissors') ||
+                (playerSelection === 'paper' && computerSelection === 'rock') ||
+                (playerSelection === 'scissors' && computerSelection === 'paper')) {
+        winLose = 'won'
+        playerScore++
+    } else {
+        winLose = 'lost'
+        computerScore++    
     }
     reportPlayer.innerText = `Pikachu: ${playerSelection}!`
     reportComputer.innerText = `Meowth: ${computerSelection}!`
@@ -101,6 +82,15 @@ function playRound(playerSelection, computerSelection) {
     } else if (winLose === 'tied') {
         document.querySelector('#pikachuPic').classList.add('shakeImage')
         document.querySelector('#meowthPic').classList.add('shakeImage')
+    }
+}
+
+// check if game is over
+function isGameOver(playerScore, computerScore) {
+    if (playerScore === 5 || computerScore === 5) {
+        return true
+    } else {
+        return false
     }
 }
 
